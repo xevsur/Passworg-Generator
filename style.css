@@ -8,10 +8,18 @@ body{
     font-weight: 700;
     color: #e6e5ea;
     background-color: #08070b;
-    height: 100vh;
+    height: 98vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    min-width: 370px;
+}
+main{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  
 }
 .Header {
     font-size: 16px;
@@ -23,17 +31,21 @@ body{
 .display {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: #24232c;
     color: #e6e5ea;
-    padding: 16px 15px;
+    width: 100%;
     margin-bottom: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .passwordCont {
     font-size: 24px;
     line-height: 32px;
     mix-blend-mode: normal;
     opacity: 0.25;
+    flex-grow: 1;
+    height: 32px;
 }
 .copy {
     display: flex;
@@ -49,7 +61,13 @@ body{
   }
 .settings{
     background-color: #24232c;
-    padding: 21px 16px 16px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
 }
 .sliderCont{
     margin-bottom: 32px;
@@ -100,6 +118,8 @@ body{
 }
 .checkbox{
     display: flex;
+    flex-direction: row;
+    justify-items: space-between;
 }
 .markCont{
     display: block;
@@ -112,7 +132,7 @@ body{
     user-select: none;
 }
 .markCont input {
-    position: absolute;
+   
     opacity: 0;
     cursor: pointer;
     height: 0;
