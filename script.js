@@ -23,7 +23,12 @@ function generate() {
     var includeSymbols = document.querySelector(".checkSymbol").checked;
     
     if (!includeUpper && !includeLower && !includeNums && !includeSymbols) {
-        document.querySelector(".passwordCont").textContent = "Choose from Options...";
+        document.querySelector(".passwordCont").textContent = "Choose from Options";
+        return;
+      }
+
+    if (passLength == 0) {
+        document.querySelector(".passwordCont").textContent = "Choose character length";
         return;
       }
 
@@ -100,7 +105,7 @@ function generate() {
     strengthBar4.style.border = "2px solid #A4FFAF";
   };
 
-
+  
   if (strength < 25) {
     strengthTxt.textContent = "Weak";
   } else if (strength < 50) {
@@ -112,6 +117,7 @@ function generate() {
   }else{
     strengthTxt.textContent = "";
   }
+
 };
 
   
@@ -156,9 +162,10 @@ slider.addEventListener("input", function() {
  
  
       function copied() {
-        copy.style.display = "flex";
-        navigator.clipboard.writeText(password.textContent);
-        setTimeout(function() {
+        if (document.querySelector(".passwordCont").textContent !== "Choose from Options" && document.querySelector(".passwordCont").textContent != "Choose character length"){
+            copy.style.display = "flex";
+            navigator.clipboard.writeText(password.textContent);
+            setTimeout(function() {
             copy.style.display = "none";
-          }, 2000);
+          }, 2000);}
       }
