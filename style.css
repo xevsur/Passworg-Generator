@@ -343,10 +343,7 @@ main{
 
 
 @media (max-width: 480px){
-   .body{
-      min-width: 320px;
-   }
-   .main{
-      min-width: 300px;
+   .passwordCont{
+    font-size: 13px;
    }
 }
